@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="MainCtrl">
+            <a href="" ng-click="toggle = !toggle">Toggle nav</a>
+            <ul ng-show="toggle">
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+            </ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+		myApp.controller('MainCtrl', ['$scope', function ($scope) {
+
+		}]);
+	</script>
+</html>

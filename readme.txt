@@ -10,3 +10,5 @@ angular 1.x 버젼 예제를 돌려보기 위한 간단한 python flask 코드�
  ** use pycharm community version
  ** use git command
  ** use virtualenv by python
+
+ ** study in this blog article (http://soomong.net/blog/2014/01/20/translation-ultimate-guide-to-learning-angularjs-in-one-day/)

@@ -10,6 +10,7 @@
                     <p>From: {{ message.from }}</p>
                     <p>Subject: {{ message.subject }}</p>
                     <p>{{ message.sent | date:'MMM d, y h:mm:ss a' }}</p>
+                    <a style=" color: red;" ng-click="deleteEmail($index)">delete me ..</a>
                 </li>
             </ul>
 
@@ -21,6 +22,11 @@
 
             // 이메일 객체를 생성
             $scope.emails = {};
+
+            $scope.deleteEmail = function(index) {
+                $scope.emails.messages.splice(index, 1)
+            }
+
 
             // 서버에서 데이터를 받아온 것처럼 꾸며보자.
             // 그냥 객체의 배열이다.
