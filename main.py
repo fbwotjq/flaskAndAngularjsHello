@@ -17,5 +17,10 @@ def justPost():
     returnData = json.dumps({'name':'fbwotjq', 'id': 'jaco.ryu', 'type':'POST'})
     return returnData
 
+@app.route("/someUrl", methods=['GET'])
+def someUrl():
+    returnData = json.dumps({'user':{'name': 'fbwotjq', 'id': 'jaco.ryu', 'type': 'POST'}})
+    return returnData
+
 if __name__ == "__main__":
     app.run()
