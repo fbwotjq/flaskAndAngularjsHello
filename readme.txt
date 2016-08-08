@@ -5,7 +5,7 @@ angular 1.x 버젼 예제를 돌려보기 위한 간단한 python flask 코드�
  - sudo pip install virtualenv
  - virtualenv env
  -  . env/bin/activate
- - console> python main.py
+ - console> python main.py ==> start server port 5000
 
  ** use pycharm community version
  ** use git command
