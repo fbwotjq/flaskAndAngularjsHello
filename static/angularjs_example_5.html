@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="MainCtrl">
+            <input type="text" ng-model="myModel">
+			<p> My model data  :  {{myModel}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+		myApp.controller('MainCtrl', ['$scope', function ($scope) {
+
+			$scope.myModel = '지우고 값을 입력해주세욤';
+
+		}]);
+	</script>
+</html>
