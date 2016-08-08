@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="MainCtrl">
+			{{text}}
+			<p> original text : <input type="text" ng-model="greeting"></p>
+			<p> reverse text :  {{greeting|reverse}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+		myApp.service('Math', function () {
+			this.multiply = function (x, y) {
+ 				return x * y;
+			};
+		});
+		myApp.factory('Server', ['$http', function ($http) {
+			return {
+				get: function(url) {
+					return $http.get(url);
+				},
+				post: function(url) {
+					return $http.post(url);
+				},
+			};
+		}]);
+		myApp.filter('reverse', function () {
+    		return function (input, uppercase) {
+        		var out = '';
+        		for (var i = 0; i < input.length; i++) {
+            		out = input.charAt(i) + out;
+        		}
+        		if (uppercase) {
+            		out = out.toUpperCase();
+        		}
+        		return out;
+    		}
+		});
+		myApp.controller('MainCtrl', ['$scope', 'Math', 'Server', function ($scope, Math, Server) {
+
+			var a = 12;
+			var b = 24;
+
+			// 결과는 288
+			var result = Math.multiply(a, b);
+			$scope.text = result;
+
+			var jsonGet = 'http://localhost:5000/justGet';
+			var jsonPost = 'http://localhost:5000/justPost';
+
+			var resultGetData = Server.get(jsonGet);
+			console.log(resultGetData);
+			var resultPostData = Server.post(jsonPost);
+			console.log(resultPostData);
+
+			$scope.greeting = 'fbwotjq';
+
+		}]);
+	</script>
+</html>

@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+    		<div ng-controller="MainCtrl">
+        		{{ text }}
+    		</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 엥귤러 컨트롤러를 지정하여 html에 해당 텍스트를 맵핑한다.
+		var myApp = angular.module('myApp', []);
+		myApp.controller('MainCtrl', ['$scope', function ($scope) {
+			$scope.text = "hello jaco";
+		}]);
+	</script>
+</html>

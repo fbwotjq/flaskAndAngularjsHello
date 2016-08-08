@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+    		<div ng-controller="UserCtrl">
+        		<p class="username">Welcome, {{ user.details.username }}</p>
+        		<p class="id">User ID: {{ user.details.id }}</p>
+    		</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', []);
+		myApp.controller('UserCtrl', ['$scope', function ($scope) {
+    
+    		// user details라는 네임스페이스를 사용하자. DOM에서 알아보기도 좋을 것이다.
+    		$scope.user = {};
+    		$scope.user.details = {
+      		"username": "jaesubRyu",
+      		"id": "jaco.ryu"
+    		};
+    
+		}]);
+	</script>
+</html>
