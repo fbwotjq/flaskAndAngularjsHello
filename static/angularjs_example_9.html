@@ -1,0 +1,43 @@
+<html ng-app="myApp">
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+	</head>
+	<body ng-controller="MainCtrl as main">
+		<div ng-view="">
+			ngRoute EXAMPLE PAGE
+		</div>
+		<div>
+			<a href="#/">0</a>
+			<a href="#/template1">1</a>
+			<a href="#/template2">2</a>
+			<a href="#/template3">3</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', [
+			'ngRoute'
+		]);
+		myApp.config(function($routeProvider) {
+			$routeProvider.when('/template1', {
+				templateUrl : '/static/template/template1.html',
+				controller: 'Template1Ctrl',
+				controllerAs: 'temp1'
+			}).when('/template2', {
+				templateUrl : '/static/template/template2.html',
+				controller: 'Template2Ctrl',
+				controllerAs: 'temp2'
+			}).otherwise({redirectTo: '/'});
+		});
+
+		myApp.controller('MainCtrl', ['$scope', function ($scope) {
+
+		}]);
+		myApp.controller('Template1Ctrl', ['$scope', function ($scope) {
+
+		}]);
+		myApp.controller('Template2Ctrl', ['$scope', function ($scope) {
+
+		}]);
+	</script>
+</html>
